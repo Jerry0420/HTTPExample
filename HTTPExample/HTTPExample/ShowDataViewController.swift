@@ -26,6 +26,8 @@ class ShowDataViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         imageView.image = nil
+        textView.text = nil
+        data = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {

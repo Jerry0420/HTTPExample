@@ -32,22 +32,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initResponse()
     }
-
+    
+    func initResponse() {
+        data = nil
+        response = nil
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showData"{
             if let showDataVC = segue.destination as? ShowDataViewController{
-                
                 showDataVC.data = data
                 showDataVC.response = response
-
             }
         }
-
     }
     
     func processData(data: Data){
